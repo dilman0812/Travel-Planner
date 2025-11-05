@@ -127,7 +127,7 @@ http://localhost:3000/
 | description | TEXT | Information about the attraction |
 
 ## 👨‍💻 Author
-I built using Node.js, Express.js, EJS, and PostgreSQL.
+I built this website using Node.js, Express.js, EJS, and PostgreSQL.
 
 ## 📄 License
 You are free to modify and distribute it for educational or personal use.
