@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,
+                         initial-scale=1.0">
+    <title>Local Guides Login</title>
+    <link rel="stylesheet" href="login.css" />
+    <link rel="stylesheet" href="./style/main.css" />
+</head>
+
+<body style='background: linear-gradient(rgba(0, 0, 0, 0.85), rgba(0, 0, 0, 0.45) 25%, transparent), url("https://images.unsplash.com/photo-1542359649-31e03cd4d909?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1267&q=80") 50% no-repeat; 
+background-size: cover;'>
+
+
+    <header class="header">
+        <div class="flex-wraper">
+            <div class="logo">
+                <img src="/logo.png" alt="logo" width="600" />
+            </div>
+            <nav class="navbar">
+                <ul class="navbar-links">
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/plan">Planner</a></li>
+
+                    <li><a href="/account" class="active-link">Account</a></li>
+                    <li><a href="#"></a></li>
+                </ul>
+            </nav>
+            <div class="mobil-menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </header>
+    <!-- container div -->
+    <div class="container">
+        <!-- upper button section to select
+             the login or signup form -->
+        <div class="slider"></div>
+        <div class="btn">
+            <button class="login">Login</button>
+            <button class="signup">Signup</button>
+        </div>
+
+        <!-- Form section that contains the
+             login and the signup form -->
+        <div class="form-section">
+
+            <!-- login form -->
+<form action="/guide-login" method="post">
+    <div class="login-box">
+        <h1>
+            Guide Login
+        </h1>
+        <input required type="email" class="email ele" placeholder="Email" name="email">
+        <input required type="password" class="password ele" placeholder="password" name="password">
+        <button class="clkbtn">Login</button>
+    </div>
+</form>
+
+            <!-- signup form -->
+
+            <form action="/guide-register" method="post">
+                <div class="signup-box" style="overflow-y: scroll; height: 100%;">
+                    <div style="height: 100%;  margin-bottom: 5%;">
+                        <h1>
+                            Guide Register
+                        </h1>
+                    <input required type="text" name="name" class="name ele" placeholder="Enter your name">
+                    <input required type="email" name="email" class="email ele" placeholder="Enter Email">
+                    <input required type="password" name="password" class="password ele" placeholder="Password">
+                    <input required type="password" name="confpass" class="password ele" placeholder="Confirm password">
+                    <input required type="text" name="contact" placeholder="Phone Number" class="ele">
+                    <input required type="text" name="aadhar" placeholder="Aadhar Number" class="ele">
+                    <input required type="text" name="charges" placeholder="Charges" class="ele">
+                    
+                    <input required type="text" name="state" placeholder="State" class="ele">
+                    <input required type="text" name="city" placeholder="City" class="ele">
+                    <input type="text" name="language" placeholder="Languages Known, Seperate With Comma" class="ele" required>
+
+                    <button class="clkbtn" type="submit">Signup</button>
+                    <br><Br><Br>
+                    </div>
+    
+                </div>
+            </form>
+
+
+
+        </div>
+    </div>
+
+    <a style="color: black; background-color: white; padding: 1% 2.5%; border-radius:10px;" href="/login"> Click Here
+        For User Login</a>
+    <script src="login.js"></script>
+</body>
+
+</html>
+</body>

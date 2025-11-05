@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="profile.css">
+    <title>Guide Details</title>
+</head>
+<body>
+    <h1>Guide Details</h1>
+    <form action="process_details.php" method="post" enctype="multipart/form-data"  style="text-align: center;">
+        <table>
+            <tr>
+                <td>Name:</td>
+                <td><input type="text" name="name" required></td>
+            </tr>
+            <tr>
+                <td>Contact No.:</td>
+                <td><input type="text" name="contact" required></td>
+            </tr>
+            <tr>
+                <td>Aadhar No.:</td>
+                <td><input type="text" name="aadhar" required></td>
+            </tr>
+            <tr>
+                <td>Free Slots Available for Booking:</td>
+                <td><input type="text" name="slots" required></td>
+            </tr>
+            <tr>
+                <td>Language Spoken:</td>
+                <td><input type="text" name="language" required></td>
+            </tr>
+            <tr>
+                <td>Expertise in Places:</td>
+                <td><input type="text" name="expertise" required></td>
+            </tr>
+            <tr>
+                <td>Charges per Day:</td>
+                <td><input type="text" name="charges" required></td>
+            </tr>
+            <tr>
+                <td>Profile Picture:</td>
+                <td><input type="file" name="profile_picture" accept="image/*"></td>
+            </tr>
+        </table>
+        <input type="submit" value="Submit">
+        
+    </form>
+</body>
+</html>

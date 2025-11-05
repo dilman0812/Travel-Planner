@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./node_modules/flatpickr/dist/planner.css" />
+  <link rel="stylesheet" href="./style/main.css" />
+  <title>Planner</title>
+</head>
+
+<body>
+  <header class="header">
+    <div class="flex-wraper">
+      <div class="logo">
+        <img src="./assets/logo.png" alt="logo" />
+      </div>
+      <nav class="navbar">
+        <ul class="navbar-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="planner.html" class="active-link">Planner</a></li>
+
+          <li><a href="login.html">Local guides</a></li>
+          <li><a href="#"></a></li>
+        </ul>
+      </nav>
+      <div class="mobil-menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </div>
+  </header>
+  <div class="inter"></div>
+  <main>
+    <section class="homepage-hero">
+      <div class="flex-wraper">
+        <div class="homepage-hero__text">
+          <h1>Plan Your Trip Your Way</h1>
+          <p>Your Destination Your Way</p>
+        </div>
+        <div class="homepage-planner">
+          <form class="homepage-search__form" id="MainTravelForm">
+            <input type="text" name="destination" id="searct_text" placeholder="Your Destination" />
+            START DATE &nbsp;&nbsp; <input type="date" name="start_date" id="rangePlugin" placeholder="Start date"
+              class="date_input" />
+            END DATE &nbsp;&nbsp;<input type="date" name="end_date" id="secondRangeInput" placeholder="End date"
+              class="date_input" />
+            <br>
+            <div style="width: 50px;"></div>
+            <input type="submit" value="Start" id="search_submit" />
+          </form>
+        </div>
+      </div>
+    </section>
+    <script>
+      var form = document.getElementById("MainTravelForm");
+
+      // Add an event listener for the "submit" event
+      form.addEventListener("submit", function (event) {
+        event.preventDefault();
+        alert("Form submitted!");
+
+        var destinationInput = document.querySelector('input[name="destination"]').value;
+        var beginDate = document.querySelector('input[name="start_date"]').value;
+        var endDate = document.querySelector('input[name="end_date"]').value;
+
+        sessionStorage.setItem("destination", destinationInput);
+        sessionStorage.setItem("beginDate", beginDate);
+        sessionStorage.setItem("endDate", endDate);
+        window.open("result.html")
+
+      });
+
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./node_modules/flatpickr/dist/planner.css" />
+    <link rel="stylesheet" href="./style/main.css" />
+    <title>Result</title>
+</head>
+
+<body>
+    <header class="header">
+        <div class="flex-wraper">
+            <div class="logo">
+                <img src="./assets/logo.png" alt="logo" />
+            </div>
+            <nav class="navbar">
+                <ul class="navbar-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="planner.html" class="active-link">Planner</a></li>
+
+                    <li><a href="login.html">Local guides</a></li>
+                    <li><a href="#"></a></li>
+                </ul>
+            </nav>
+            <div class="mobil-menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </header>
+    <div class="inter"></div>
+    <main>
+        <section class="homepage-hero">
+            <div class="flex-wraper">
+                              <div class="homepage-planner">
+                    <form class="homepage-search__form" id="MainTravelForm">
+                        <input readonly type="text"  name="destination" id="searct_text" placeholder="Your Destination" />
+                        START DATE &nbsp;&nbsp; <input readonly type="date" name="start_date" id="rangePlugin"
+                            placeholder="Start date" class="date_input" />
+                        END DATE &nbsp;&nbsp;<input readonly type="date" name="end_date" id="secondRangeInput"
+                            placeholder="End date" class="date_input" />
+                    </form>
+                    <a href="" id="mmt"><button class="view-more__btn" style="color: white;"> Search Hotels </button></a>
+                </div>
+            </div>
+        </section>
+
+        <script>
+            document.querySelector('input[name="destination"]').value = sessionStorage.getItem("destination");
+        document.querySelector('input[name="start_date"]').value = sessionStorage.getItem("beginDate")
+         document.querySelector('input[name="end_date"]').value = sessionStorage.getItem("endDate");
+        var url = "https://www.booking.com/searchresults.en-gb.html?ss=" + sessionStorage.getItem("destination") + "&ssne=" + sessionStorage.getItem("destination") + "&ssne_untouched=" + sessionStorage.getItem("destination") + "&dest_type=city&checkin="+sessionStorage.getItem("beginDate")+"&checkout="+sessionStorage.getItem("endDate") 
+        console.log(url);
+
+        document.getElementById("mmt").setAttribute("href",url)
+        </script>
+
+</body>
+
+</html>

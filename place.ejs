@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./node_modules/flatpickr/dist/planner.css" />
+    <link rel="stylesheet" href="./style/main.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
+        integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+    <title>
+        <%= placeData.attraction %>
+    </title>
+</head>
+
+<body class="body">
+    <header class="header">
+        <div class="flex-wraper">
+          <div class="logo">
+            <img src="/logo.png" alt="logo"  width="600">
+          </div>
+          <nav class="navbar">
+            <ul class="navbar-links">
+              <li><a href="/" class="active-link">Home</a></li>
+              <li><a href="/plan" >Planner</a></li>
+    
+             
+          <li><a href="/account">Account</a></li>
+              <li><a href="#"></a></li>
+            </ul>
+          </nav>
+          <div class="mobil-menu">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+        </div>
+      </header>
+    <main>
+        <div class="row">
+            <div class="col-lg-8  col-md-8 col-sm-12">
+                <h1>
+                    <%= placeData.attraction %>
+                </h1>
+                <span>
+                    <%= placeData.city %> , <%= placeData.state %>
+                </span>
+                <p class="pt-4">
+                    <%= placeData.description %>
+                </p>
+
+                <h3>
+                    Details
+                </h3>
+                <%- placeData.details === null ? "No Such Details" : placeData.details %>
+                <br>
+                <h3>
+                    Precautions
+                </h3>
+                <%- placeData.precautions === null ? "No Such Precautions" : placeData.precautions %>
+
+            </div>
+            <div class="col-lg-4 col-md-4 col-sm-12">
+                <img src="<%= placeData.img %>">
+            </div>
+        </div>
+
+    </main>
+</body>
+<style>
+    .body {
+        margin: 0;
+        padding: 0;
+        background: linear-gradient(rgba(0, 0, 0, 0.85), rgba(0, 0, 0, 0.45) 100%, transparent), url("<%= placeData.img %>") 50% no-repeat;
+        z-index: -1;
+        color: white;
+        background-size: cover;
+        background-attachment: fixed;
+        background-position: center;
+        height: fit-content;
+       backdrop-filter: blur(5px);
+        z-index: 1;
+    }
+
+    .body main {
+        padding: 7.5%;
+        margin-top: 7.5%;
+        height: 100vh;
+    }
+
+    .body h1 {
+        font-weight: 700;
+        font-size: 3rem;
+    }
+
+    .body span {
+        font-size: 1.2rem;
+        font-weight: 600;
+    }
+
+    .body main img{
+        width: 100%;
+        box-shadow: 0px 0px 20px 1px #000000;
+    }
+    .body p{
+        font-family: 500;
+        font-size: 1.3rem;
+    }
+</style>
+
+</html>

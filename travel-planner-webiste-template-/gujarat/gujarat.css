@@ -1,0 +1,163 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+}
+.container{
+    width: 100%;
+    height: 100vh;
+    background-image: linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.7)),url(gujarat.jpg);
+    background-position: center;
+    background-size: cover;
+    padding-left: 8%;
+    padding-right: 8%;
+    box-sizing: border-box;
+}
+.navbar{
+    height: 12%;
+    display: flex;
+    align-items: center;
+}
+
+nav{
+    flex: 1;
+    text-align: right;
+}
+nav ul li{
+    list-style: none;
+    display: inline-block;
+    margin-left: 60px;
+}
+nav ul li a{
+    text-decoration: none;
+    color: #fff;
+    font-size: 13px;
+    padding: 5px 20px;
+    border: 1px currentColor #fff transparent;
+    border-radius: 10px;
+    transition: 0.6s ease;
+}
+nav ul li a:hover{
+background-color: #fff;
+color: rgba(0,0,0);
+}
+.row{
+    display: flex;
+    height: 88%;
+    align-items: center;
+}
+.col{
+    flex-basis: 50%;
+}
+h1{
+    color: #fff;
+    font-size: 100px;
+}
+p{
+    color: #fff;
+    font-size: 11px;
+    line-height: 15px;
+}
+
+.card{
+    width: 200px;
+    height: 230px;
+    display: inline-block;
+    border-radius: 10px;
+    padding: 15px 25px;
+    box-sizing: border-box;
+    cursor: pointer;
+    margin: 10px 15px;
+    background-position: center;
+    background-size: cover;
+    transition: transform 0.5s;
+}
+
+.card1{
+    background-image: url(AHMEDABAD.jpg);
+}
+.card2{
+    background-image: url(GIR-NATIONAL-PARK.jpg);
+}
+.card3{
+    background-image: url(SOMNATH.jpg);
+}
+.card4{
+    background-image: url(statueofunity.png);
+}
+
+.card:hover{
+    transform: translateY(-10px);
+}
+h4{
+    color: #fff;
+    text-shadow: 0 0 5px #999;
+}
+
+p{
+    color: rgb(255, 255, 255);
+}
+.card1 button{
+    width: 100px;
+    height: 30px;
+    background-color: #333;
+    color: #fff;
+    border: none;
+    outline: none;
+    font-size: 10px;
+    cursor: pointer;
+    border-radius: 50px;
+    margin-top: 40px;
+}
+.card1 button:hover{
+    letter-spacing: 2px;
+    opacity: .8;
+}
+.card2 button{
+    width: 100px;
+    height: 30px;
+    background-color: #333;
+    color: #fff;
+    border: none;
+    outline: none;
+    font-size: 10px;
+    cursor: pointer;
+    border-radius: 50px;
+    margin-top: 40px;
+}
+.card2 button:hover{
+    letter-spacing: 2px;
+    opacity: .8;
+}
+.card3 button{
+    width: 100px;
+    height: 30px;
+    background-color: #333;
+    color: #fff;
+    border: none;
+    outline: none;
+    font-size: 10px;
+    cursor: pointer;
+    border-radius: 50px;
+    margin-top: 40px;
+}
+.card3 button:hover{
+    letter-spacing: 2px;
+    opacity: .8;
+}
+.card4 button{
+    width: 100px;
+    height: 30px;
+    background-color: #333;
+    color: #fff;
+    border: none;
+    outline: none;
+    font-size: 10px;
+    cursor: pointer;
+    border-radius: 50px;
+    margin-top: 40px;
+}
+.card4 button:hover{
+    letter-spacing: 2px;
+    opacity: .8;
+}

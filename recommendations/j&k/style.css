@@ -1,0 +1,77 @@
+/* Reset some default browser styles */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f2f2f2;
+    color: #333; /* Text color */
+    line-height: 1.6; /* Improved line height for readability */
+  }
+  
+  /* Header styling */
+  h2 {
+    text-align: center;
+    color: #0070c0;
+    font-size: 28px; /* Adjust the font size */
+    margin: 20px 0; /* Improved spacing */
+  }
+  
+  /* Subheadings */
+  h4 {
+    color: #004080;
+    font-size: 20px;
+    margin: 10px 0; /* Improved spacing */
+  }
+  
+  /* Image styling */
+  img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+    border-radius: 5px; /* Add a slight border radius */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Add a subtle shadow effect */
+  }
+  
+  /* List styling */
+  ul {
+    list-style-type: disc;
+    margin-left: 20px;
+    padding-left: 20px; /* Add padding for improved readability */
+  }
+  
+  /* List item styling */
+  li {
+    margin: 5px 0; /* Improved spacing */
+  }
+  
+  /* Center-aligned text */
+  .center {
+    text-align: center;
+    font-size: 20px;
+    margin: 10px 0;
+  }
+  
+  /* Horizontal rule styling */
+  hr {
+    border: none;
+    border-top: 2px solid #0070c0; /* Use a solid line with a different color */
+    margin: 20px 0;
+  }
+  
+  /* Styling for the "ASSAM" text */
+  .font {
+    text-align: center;
+    font-size: 70px;
+    color: #004080;
+    margin: 20px 0; /* Improved spacing */
+  }
+  
+  /* Styling for content containers */
+  .content {
+    padding: 20px;
+    background-color: #fff; /* Add a white background to content */
+    border-radius: 5px; /* Add a slight border radius */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Add a subtle shadow effect */
+  }
+  

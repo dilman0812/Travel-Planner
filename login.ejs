@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,
+                         initial-scale=1.0">
+  <title>Login</title>
+  <link rel="stylesheet" href="login.css" />
+  <link rel="stylesheet" href="./style/main.css" />
+</head>
+
+<body style='background: linear-gradient(rgba(0, 0, 0, 0.85), rgba(0, 0, 0, 0.45) 25%, transparent), url("https://images.unsplash.com/photo-1542359649-31e03cd4d909?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1267&q=80") 50% no-repeat; 
+background-size: cover;'>
+
+
+  <header class="header">
+    <div class="flex-wraper">
+      <div class="logo">
+        <img src="/logo.png" alt="logo" width="600" />
+      </div>
+      <nav class="navbar">
+        <ul class="navbar-links">
+          <li><a href="/">Home</a></li>
+          <li><a href="/plan">Planner</a></li>
+
+          <li><a href="/login" class="active-link">Account</a></li>
+          <li><a href="#"></a></li>
+        </ul>
+      </nav>
+      <div class="mobil-menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </div>
+  </header>
+  <!-- container div -->
+  <div class="container">
+
+    <!-- upper button section to select
+             the login or signup form -->
+    <div class="slider"></div>
+    <div class="btn">
+      <button class="login">Login</button>
+      <button class="signup">Signup</button>
+    </div>
+
+    <!-- Form section that contains the
+             login and the signup form -->
+    <div class="form-section">
+
+      <!-- login form -->
+<form action="/user-login" method="post">
+  <div class="login-box">
+    <h1>
+      User Login
+    </h1>
+    <input required name="email" type="email" class="email ele" placeholder="Account Email">
+    <input required name="password" type="password" class="password ele" placeholder="Password">
+    <button class="clkbtn">Login</button>
+  </div>
+</form>
+
+      <!-- signup form -->
+      <form action="/user-register" method="post">
+        <div class="signup-box">
+
+          <div class="signup-box" style="overflow-y: scroll; height: 100%;">
+            <div style="height: 100%; margin-bottom: 5%;">
+              <h1>
+                User Registration
+              </h1>
+              <input required name="name" type="text" class="name ele" placeholder="Enter your name">
+              <input required name="email" type="email" class="email ele" placeholder="Your Email">
+              <input required name="password" type="password" class="password ele" placeholder="Password">
+              <input required name="passconf" type="password" class="password ele" placeholder="Confirm Password">
+              <button class="clkbtn" type="submit">Signup</button>
+              
+              <br><Br><Br>
+            </div>
+          </div>
+        </div>
+
+      </form>
+
+    </div>
+  </div>
+
+  <a style="color: black; background-color: white; padding: 1% 2.5%; border-radius:10px;" href="/login-GUIDE-LOGIN">
+    Click Here For Guide Login</a>
+  <script src="login.js"></script>
+</body>
+
+</html>
+</body>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./form.css" />
+
+    <title>Feedback Page</title>
+</head>
+<body>
+    <div class="feedback-container">
+        <h1>GIVE US YOUR VALUABLE FEEDBACK</h1>
+        <p>Your feedback is very important to us</p>
+        <div class="emoji-box">
+            <button class="btn"></button>
+            <button class="btn"></button>
+            <button class="btn"></button>
+            <button class="btn"></button>
+            <button class="btn"></button>
+            <button class="btn"></button>
+        </div>
+        <p class="question">What do you want to say?</p>
+        <textarea name="feedback" id="textarea" cols="20" rows="5"></textarea>
+        <p class="question">Do you want to share this publicly?</p>
+        <div class="radio-btn">
+            <div class="one-btn">
+                <input type="radio" name="one" id="Yes" />
+                <label for="Yes">&nbsp;&nbsp;&nbsp;Yes</label>
+            </div>
+            <div class="one-btn">
+                <input type="radio" name="one" id="No" />
+                <label for="No">&nbsp;&nbsp;&nbsp;No</label>
+        
+            </div>
+        </div>
+       <div class="info-field">
+        <div class="name">
+            <label>
+                <input type="text" placeholder="Nickname" />
+            </label>   
+        </div>
+       
+       <div class="email">
+        <label>
+            <input type="email" placeholder="Email address (Will not be published)" />
+        </label>
+       </div>
+    </div>
+    <div class="accept">
+        <input type="radio" id="accept" />
+        <label>I accept the <a href="#">terms and conditions</a></label>
+        <br>
+        <br>
+    </div>
+    <div class="center">
+        <button class="btn-button">Send</button>
+    </div>
+    </div>
+    <script src="./app.js"></script>
+</body>
+</html>

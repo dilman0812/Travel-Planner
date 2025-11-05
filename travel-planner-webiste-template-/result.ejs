@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./node_modules/flatpickr/dist/planner.css" />
+    <link rel="stylesheet" href="./style/main.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">  
+    <title>Result</title>
+</head>
+
+<body>
+    <header class="header">
+        <div class="flex-wraper">
+          <div class="logo">
+            <img src="/logo.png" alt="logo"  width="600">
+          </div>
+          <nav class="navbar">
+            <ul class="navbar-links">
+              <li><a href="/" class="">Home</a></li>
+              <li><a href="/plan" >Planner</a></li>
+    
+             
+          <li><a href="/account">Account</a></li>
+              <li><a href="#"></a></li>
+            </ul>
+          </nav>
+          <div class="mobil-menu">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+        </div>
+      </header>
+    <div class="inter"></div>
+    <main>
+        <section class="homepage-hero">
+            <div class="flex-wraper">
+                    <div class="homepage-planner">
+                    <form class="homepage-search__form" id="MainTravelForm">
+                        <input readonly type="text"  name="destination" id="searct_text" placeholder="Your Destination"  value="<%= destination %>" />
+                        START DATE &nbsp;&nbsp; <input readonly type="date" name="start_date" id="rangePlugin"
+                            placeholder="Start date" class="date_input" value="<%= startDate %>" />
+                        END DATE &nbsp;&nbsp;<input readonly type="date" name="end_date" id="secondRangeInput"
+                            placeholder="End date" class="date_input" value="<%= endDate %>" />
+                    </form>
+
+
+                </div><br><Br>
+                <h3 style="color: white; z-index: 5;">You Plan List</h3>
+                <div class="row" style="margin: 2%; text-align: center;" id="wishlistDisplay">
+                    <p style="color: white; z-index: 5;">Add Places To Your Plan From Below</p>
+                </div>
+                <h3 style="color: white; z-index: 5;">Available Places To Visit</h3>
+                <div class="row" style="margin: 2%; text-align: center;" id="normalDisplay">
+                  
+                <% attractions.forEach((i) => {  %>
+                    <%- include("placeCard.ejs" ,{imgLink:i.img ,placeName: i.attraction, placeDescription : i.description} ) %>
+                    
+                    <% }) %>
+                </div>
+                <div class="guidestable">
+                    <h1>Guides Available Here : </h1>
+                    <table>
+                    <% if (guides.length == 0) { %>
+                        <tr><td>NO GUIDES FOUND IN THIS LOCATION</td> </tr>
+                        <% } else { %>
+                            <tr>
+                                <th>Guide Name</th>
+                                <th>Language Spoken</th>
+                                <th>Charges</th>
+                                <th>Availability</th>
+                                <th style="width: 12.5%;">Book</th>
+                              </tr>
+                            <% for (var i in guides) { %>
+                                <tr>
+                                  <td><%- guides[i].guidename %></td>
+                                  <td><%- guides[i].languagespoken %></td>
+                                  <td><%- guides[i].charges %></td>
+                                  <td><%- guides[i].availability %></td>
+                                  <td style="text-align: center;"> <%- guides[i].availability.toLowerCase() === "available" ? include("availableButton.ejs", {guideEmail:guides[i].email,guidename:guides[i].guidename, guideID : guides[i].aadharno, start_Date:startDate, end_Date : endDate}) : include("notAvailableButton.ejs") %></td>
+                                </tr>
+                              <% }} %>
+                </table></div>
+
+                <a href="" style=" z-index: 6;" id="mmt"><button class="view-more__btn" style="color: white;"> Search Hotels </button></a>
+            </div>
+        </section>
+
+        <script>
+          function addToWishlist(elementID){
+            document.getElementById("button-"+elementID).textContent = "Remove From Plan";
+            document.getElementById("button-"+elementID).setAttribute("onclick","javascript:removeFromWishList('"+elementID+"')")
+            document.getElementById("wishlistDisplay").firstElementChild.textContent = "";
+            document.getElementById("wishlistDisplay").appendChild(document.getElementById(elementID));
+          }
+
+          function removeFromWishList(elementID){
+            document.getElementById("button-"+elementID).textContent = "Add To Plan";
+            document.getElementById("button-"+elementID).setAttribute("onclick","javascript:addToWishlist('"+elementID+"')")
+            document.getElementById("normalDisplay").appendChild(document.getElementById(elementID));
+          }
+
+
+        var url = "https://www.booking.com/searchresults.en-gb.html?ss=<%= destination %>&ssne=<%= destination %>&ssne_untouched=<%= destination %>&dest_type=city&checkin=<%= startDate %>&checkout=<%= endDate %>"
+
+        document.getElementById("mmt").setAttribute("href",url)
+        </script>
+
+</body>
+
+</html>

@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Guide Profile - Travel Planner</title>
+
+    <link rel="stylesheet" href="login.css" />
+    <link rel="stylesheet" href="./style/main.css" />
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            color: #fff;
+            padding: 0;
+            background: -webkit-gradient(linear,
+                    left top,
+                    left bottom,
+                    from(rgba(0, 0, 0, 0.85)),
+                    color-stop(25%, rgba(0, 0, 0, 0.45)),
+                    to(transparent)),
+                url("https://images.unsplash.com/photo-1542359649-31e03cd4d909?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1267&q=80") 50% no-repeat;
+            background: linear-gradient(rgba(0, 0, 0, 0.85),
+                    rgba(0, 0, 0, 0.45) 25%,
+                    transparent),
+                url("https://images.unsplash.com/photo-1542359649-31e03cd4d909?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1267&q=80") 50% no-repeat;
+            z-index: 2;
+            background-size: cover;
+            background-attachment: fixed;
+            background-position: center;
+            min-height: 100vh;
+            width: 100vw;
+            position: relative;
+            z-index: 1;
+        }
+
+        input[type="submit"] {
+            padding: 1% 2%;
+            background-color: #ff6666;
+            border: 0;
+            color: white;
+            font-size: 1.2rem;
+            letter-spacing: 1.2px;
+            font-weight: 500;
+            cursor: pointer !important;
+        }
+
+        .profile-container {
+            width: 80%;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: rgba(0, 0, 0, 0.5);
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        .guide-info {
+            margin-top: 20px;
+        }
+
+        .guide-info label {
+            font-weight: bold;
+        }
+
+        .guide-info p {
+            margin: 10px 0;
+        }
+    </style>
+</head>
+
+<body>
+    <header class="header">
+        <div class="flex-wraper">
+            <div class="logo">
+                <img src="/logo.png" alt="logo" width="600" />
+            </div>
+            <nav class="navbar">
+                <ul class="navbar-links">
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/plan">Planner</a></li>
+
+                    <li><a href="/account" class="active-link">Account</a></li>
+                    <li><a href="#"></a></li>
+                </ul>
+            </nav>
+            <div class="mobil-menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </header>
+
+    <div class="profile-container">
+        <h1>Guide Profile</h1>
+        <div class="guide-info">
+            <label>Guide Name:</label>
+            <p>
+                <%= name %>
+            </p>
+        </div>
+        <div class="guide-info">
+            <label>Contact Number:</label>
+            <p>
+                <%= number %>
+            </p>
+        </div>
+        <div class="guide-info">
+            <label>Location:</label>
+            <p>
+                <%= city %> , <%= state %>
+            </p>
+        </div>
+        <div class="guide-info">
+            <label>Aadhar Number:</label>
+            <p>
+                <%= aadhar %>
+            </p>
+        </div>
+        <div class="guide-info">
+            <label>Languages Spoken:</label>
+            <p>
+                <%= languageSpoken %>
+            </p>
+        </div>
+        <div class="guide-info">
+            <label>Charges Per Day:</label>
+            <p>
+                <%= charge %>
+            </p>
+        </div>
+        <div class="guide-info">
+            <label>Requests:</label>
+            <table class="datatable">
+                <tr>
+                    <th>Client's Email</th>
+                    <th>Client's Name</th>
+                    <th>Booked From</th>
+                    <th>Booked Till</th>
+                    <th>Approved</th>
+                </tr>
+                <% if (!requests) { %>
+                    <tr>
+                        <td>NO BOOKINGS</td>
+                    </tr>
+                    <% } else {requestList=requests.split(";"); for (var i=0; i < (requestList.length -1); i++) { var requestOBJ=requestList[i].split(','); %>
+                        <tr>
+                            <td><%- requestOBJ[0] %></td>
+                            <td><%- requestOBJ[1] %></td>
+                            <td><%- requestOBJ[2] %></td>
+                            <td><%- requestOBJ[3] %></td>
+                            <td>
+                                <%- requestOBJ[4]==="Pending Approval" ? include("approveButton.ejs",{useremail:requestOBJ[0], guideemail:guideEmail}) : "Booked" %>
+                            </td>
+                        </tr>
+                        <% }} %>
+            </table>
+        </div>
+        <form action="/logout" method="post" style="width: 100%; text-align: center;">
+            <input type="submit" value="Logout" />
+        </form>
+    </div>
+</body>
+
+</html>
